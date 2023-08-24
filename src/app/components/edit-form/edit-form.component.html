@@ -1,0 +1,97 @@
+<div class="container">
+    <section>
+        <div class="form-row">
+            <div class="example-label">Nombres</div>
+            <input [(ngModel)]="userData.name" [formControl]="nameControl" class="dataInput" placeholder="Ingrese sus nombres">
+        </div>
+        <div class="error-input" *ngIf="nameControl.errors && nameControl.dirty">
+            <ng-container *ngIf="nameControl.hasError('required')">
+                Debes ingresar un nombre.
+            </ng-container>
+            <ng-container *ngIf="nameControl.hasError('pattern')">
+                Solo se permiten letras.
+            </ng-container>
+            <ng-container *ngIf="nameControl.hasError('maxlength')">
+                Máximo 55 caracteres.
+            </ng-container>
+        </div>
+    </section>
+    <section>
+        <div class="form-row">
+            <div class="example-label">Apellidos</div>
+            <input [(ngModel)]="userData.lastName" [formControl]="lastNameControl" class="dataInput" placeholder="Ingrese sus apellidos">
+        </div>
+        <div class="error-input" *ngIf="lastNameControl.errors && lastNameControl.dirty">
+            <ng-container *ngIf="lastNameControl.hasError('required')">
+                Debes ingresar un apellido.
+            </ng-container>
+            <ng-container *ngIf="lastNameControl.hasError('pattern')">
+                Solo se permiten letras.
+            </ng-container>
+            <ng-container *ngIf="lastNameControl.hasError('maxlength')">
+                Máximo 55 caracteres.
+            </ng-container>
+        </div>
+    </section>
+    <section>
+        <div class="form-row">
+            <div class="example-label">Login</div>
+            <input [(ngModel)]="userData.login" [formControl]="loginControl" class="dataInput" placeholder="Ingrese un login">
+        </div>
+        <div class="error-input" *ngIf="loginControl.errors && loginControl.dirty">
+            <ng-container *ngIf="loginControl.hasError('required')">
+                Debes ingresar un login.
+            </ng-container>
+            <ng-container *ngIf="loginControl.hasError('pattern')">
+                Solo permite letras y números.
+            </ng-container>
+            <ng-container *ngIf="loginControl.hasError('minlength')">
+                Mínimo 3 caracteres.
+            </ng-container>
+            <ng-container *ngIf="loginControl.hasError('maxlength')">
+                Máximo 55 caracteres.
+            </ng-container>
+        </div>
+    </section>
+    <section>
+        <div class="form-row">
+            <div class="example-label">Contraseña</div>
+            <input [(ngModel)]="newPassword" class="dataInput" [formControl]="newPasswordControl" type="password" placeholder="Ingrese una nueva contraseña">
+        </div>
+        <div class="error-input" *ngIf="newPasswordControl.errors && newPasswordControl.dirty">
+            <ng-container *ngIf="newPasswordControl.hasError('required')">
+                Debes ingresar un password.
+            </ng-container>
+            <ng-container *ngIf="newPasswordControl.hasError('minlength')">
+                Mínimo 6 caracteres.
+            </ng-container>
+            <ng-container *ngIf="newPasswordControl.hasError('maxlength')">
+                Máximo 25 caracteres.
+            </ng-container>
+        </div>
+    </section>
+    <section>
+        <div class="form-row">
+            <div class="example-label">Confirmar contraseña</div>
+            <input [(ngModel)]="confirmPassword" class="dataInput" [formControl]="confirmPasswordControl" type="password" placeholder="Repita la nueva contraseña">
+        </div>
+        <div class="error-input" *ngIf="confirmPasswordControl.dirty && confirmPasswordControl.touched && passwordsNotMatch">
+            Las contraseñas no coinciden.
+        </div>
+    </section>
+    <section>
+        <div class="form-row">
+            <div class="example-label">Estado</div>
+            <select [(ngModel)]="newState" class="dataInput">
+                
+                <option *ngFor="let option of options" [value]="option">
+                    {{ option }}
+                </option>
+            </select>
+        </div>
+    </section>
+    <section class="button-section">
+        <button class="cancel-button" routerLink="/home">Cancelar</button>
+        <button class="save-button" (click)="openDialog()" [disabled]="hasErrors()">Guardar</button>
+    </section>
+</div>

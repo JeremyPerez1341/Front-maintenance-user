@@ -1,0 +1,75 @@
+.container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin-bottom: 12px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.example-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.dataInput {
+    outline: none;
+    color: #333;
+    text-align: left;
+    font-size: 14px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.cancel-button,
+.save-button {
+    padding: 10px 20px;
+    margin-left: 15px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: #333;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.save-button {
+    background-color: #3866ae;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.error-input {
+    color: red;
+    font-size: 12px;
+    margin-top: 15px;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    top: -18px;
+    margin-bottom: -25px; 
+}
